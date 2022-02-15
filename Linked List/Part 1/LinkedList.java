@@ -54,6 +54,22 @@ class LL{
         size++;
     }
 
+    // Insert Node using recursion 
+    public void insertRec(int val , int index){
+        head = insertRec(val, index, head);
+    }
+    
+    private Node insertRec(int val,int index,Node node){
+        if (index == 0) {
+            Node temp = new Node(val,node);
+            // size++; 
+            return temp;
+        }
+        node.next = insertRec(val, index--, node.next);
+        return node;
+    }
+
+
     // delete the first index or the first node of the linkedlist
     public int deleteFirst(){
         int val = head.value;
@@ -139,15 +155,20 @@ public class LinkedList{
         list.insertFirst(89);
         list.insertLast(100);
 
-        list.display();
-        System.out.println(list.deleteFirst());
-        list.insertAtAnyPos(999, 3);
+        list.insertRec(65, 2);
         list.display();
 
-        System.out.println(list.deleteLast());
-        list.display();
+        // list.display();
+        // System.out.println(list.deleteFirst());
+        // list.insertAtAnyPos(999, 3);
+        // list.display();
 
-        System.out.println(list.deleteParticular(2));
-        list.display();
+        // System.out.println(list.deleteLast());
+        // list.display();
+
+        // System.out.println(list.deleteParticular(2));
+        // list.display();
+
+        
     }
 }
