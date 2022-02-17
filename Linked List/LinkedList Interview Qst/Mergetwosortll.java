@@ -33,6 +33,25 @@ class LL{
     }
 
     // Merge Two Sorted LinkedList
+    Node sortedMerge(Node head1, Node head2) {
+        Node ans = new Node(0);
+        Node tail = ans;
+        while(head1 != null && head2 != null){
+            if(head1.value <= head2.value){
+                tail.next = head1;
+                head1 = head1.next;
+                tail = tail.next;
+            }else{
+                tail.next = head2;
+                head2 = head2.next;
+                tail = tail.next;
+            }
+       }
+           tail.next = (head1 != null) ? head1 : head2;
+           return ans.next;
+      } 
+
+    // Merge Two Sorted LinkedList
     public static LL merge(LL first, LL second){
         Node f = first.head;
         Node s = second.head;
@@ -60,6 +79,19 @@ class LL{
 
         return ans;
 
+    }
+
+    public Node getMid(Node head){
+        if(head == null){
+            return head;
+        }
+        Node fast = head;
+        Node slow = head;
+        while(fast != null && fast.next.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 
     // this function is to display or to print the linkedlist
@@ -103,5 +135,7 @@ public class Mergetwosortll {
 
         LL ans = LL.merge(first, second);
         ans.display();
+
+        
     }
 }

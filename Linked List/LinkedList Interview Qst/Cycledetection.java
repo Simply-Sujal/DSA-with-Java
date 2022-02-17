@@ -113,4 +113,41 @@ public class Cycledetection {
         }
         return 0;
     }
+
+    // Linkedlist cycle II , mean i have to return the node from which the cycle starts
+    public Node detectCycle(Node head){
+        int length = 0;
+
+        Node fast = head;
+        Node slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                length = lengthCount(slow);
+                break;
+            }
+        }
+
+        if (length == 0) {
+            return null;
+        }
+
+        // find the start
+        Node first = head;
+        Node second = head;
+
+        while (length > 0) {
+            second = second.next;
+            length--;
+        }
+
+        // keep moving both forward and they will meet at cycle start
+        while (first != null) {
+            first = first.next;
+            second = second.next;
+        }
+        return first;
+    }
 }

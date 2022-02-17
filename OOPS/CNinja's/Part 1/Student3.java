@@ -87,5 +87,25 @@ public class Student3 {
         int d = f1.getNumerator();
         System.out.println(d);
         f1.Print();
+
+        f1.setNumerator(10);
+        f1.setDenominator(40);
+        f1.Print();
+
+        Fraction f2 = new Fraction(3,4);
+        f1.add(f2);
+        f1.Print();
+        f2.Print();
+
+
+        Fraction f3 = new Fraction(4,5);
+        f3.multiply(f2);
+        f3.Print();
+        f2.Print();
+
+        Fraction f4 = Fraction.add(f1, f3);
+        f1.Print();
+        f3.Print();
+        f4.Print();
     }
 }
