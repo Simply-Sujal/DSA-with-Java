@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 // In this qst. we have to find out the n th fibonnaci number 
 // Recurence realtion -> f(n) = f(n-1) + f(n-2);
-public class Problem3 {
+public class Problem3 { 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Type any number : ");

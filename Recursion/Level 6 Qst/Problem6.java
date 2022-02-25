@@ -19,5 +19,5 @@ public class Problem6 {
 
         String smallAns = removeX(str.substring(1,str.length()));
         return ans + smallAns;
-    }
+    }   
 }

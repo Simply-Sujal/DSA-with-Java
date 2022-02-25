@@ -3,6 +3,7 @@
 public class Problem3 {
     public static void main(String[] args) {
         System.out.println(skipAppNotApple("bccdeappbera"));
+        // System.out.println(skipAppNotApple("bccdeapplebera"));
     }
 
     static String skipAppNotApple(String up){

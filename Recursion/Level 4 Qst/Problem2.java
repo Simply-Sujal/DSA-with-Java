@@ -1,7 +1,7 @@
 
 // Qst. 2 in this qst. you need to remove the particular string from the original string 
 // we have string - "bcadappleghgh";
-// in above string we need to remove the apple string and after removal the srting which remains at last will our ans. 
+// in above string we need to remove the apple string and after removal the string which remains at last will our ans. 
 
 public class Problem2 {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class Problem2 {
      static String skipApple(String up){
          // base condtion
          if(up.isEmpty()){
-             return " ";
+            return " ";
          }
 
         if(up.startsWith("apple")){

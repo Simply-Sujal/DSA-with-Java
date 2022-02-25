@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // In this problem we have to sum of n natural number. 
-// Recurence relation -> n = n + sum(n-1)
+// Recurence relation -> n = n + sum(n-1)       
 public class Problem2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
