@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree{
 
     // this node class will represent the single node of the tree
@@ -58,6 +61,37 @@ public class BinaryTree{
         postOrder(root.left);
         postOrder(root.right);
         System.out.println(root.data + " ");
+    }
+
+    // level Order Traversal 
+    public static void levelOrder(Node root){
+        if (root == null) {
+            return;
+        }
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        q.add(null);
+
+        while (!q.isEmpty()) {
+            Node currNode = q.remove();
+            if (currNode == null) {
+                System.out.println();
+                if (q.isEmpty()) {
+                    break;
+                }else{
+                    q.add(null);
+                }
+            }else{
+                System.out.println(currNode.data + " ");
+                if (currNode.left != null) {
+                    q.add(currNode.left);
+                }
+                if (currNode.right != null) {
+                    q.add(currNode.right);
+                }
+            }
+        }
+
     }
 
     public static void main(String[] args) {
