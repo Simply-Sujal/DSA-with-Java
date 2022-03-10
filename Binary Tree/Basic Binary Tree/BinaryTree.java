@@ -102,6 +102,7 @@ public class BinaryTree{
         // System.out.println(root);
         // preorderTraversal(root);
         // inorderTraversal(root);
-        postOrder(root);
+        // postOrder(root);
+        levelOrder(root);
     }
 }

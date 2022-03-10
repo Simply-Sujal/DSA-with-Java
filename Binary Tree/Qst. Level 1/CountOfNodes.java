@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 public class CountOfNodes{
 
     static class Node{
@@ -83,15 +87,100 @@ public class CountOfNodes{
         return Math.max(dia3, Math.max(dia1, dia2));
     }
 
+    static class TreeInfo{
+        int ht;
+        int diam;
+
+        TreeInfo(int ht,int diam){
+            this.ht = ht;
+            this.diam = diam;
+        }
+    }
+
+    // Diameter of tree : O(N)
+    public static TreeInfo diameter2(Node root){
+        // base case
+        if (root == null) {
+            return new TreeInfo(0, 0);
+        }
+
+        TreeInfo left = diameter2(root.left);
+        TreeInfo right = diameter2(root.right);
+
+        int myHeight = Math.max(left.ht, right.ht) + 1;
+
+        int dia1 = left.diam;
+        int dia2 = right.diam;
+        int dia3 = left.ht + right.ht + 1;
+
+        int myDiam = Math.max(Math.max(dia1, dia2),dia3);
+
+        TreeInfo myInfo = new TreeInfo(myHeight, myDiam);
+        return myInfo;
+    }
+
+    //Count leaves in a binary tree
+    public static int countLeaves(Node root){
+        if (root == null) {
+            return 0;
+        }
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
+        return countLeaves(root.left) + countLeaves(root.right);
+    }
+
+    // Count Non-Leaf Nodes in Tree
+    public static int countNonLeafNodes(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        if(root.left == null && root.right == null){
+            return 0;
+        }
+        return countLeaves(root.left) + countLeaves(root.right) + 1;
+
+    }
+ 
+    // Iterative preorder traversal In Binary tree  : Tcomplex : O(N) and Scomple O(N) or O(HEIGHT OF THE TREE)
+    public static List<Integer> preorderTraversal(Node root){
+        List<Integer> preorder = new ArrayList<>();
+        if (root == null) {
+            return preorder;
+        }  
+
+        Stack<Node> st = new Stack<Node>();
+        st.push(root);
+
+        while(!st.isEmpty()){
+            root = st.pop();
+            preorder.add(root.data);
+            if (root.right != null) {
+                st.push(root.right);
+            }
+
+            if (root.left != null) {
+                st.push(root.left);
+            }
+        }
+        return preorder;
+    }
+
 
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
 
-        // System.out.println(countOfNodes(root));
+        // System.out.println(countOfNodes(root)); 
         // System.out.println(sumOfNodes(root));
         // System.out.println(heightOfTree(root));
-        System.out.println(diameter(root));
+        // System.out.println(diameter(root));
+        // System.out.println(diameter2(root).diam);
+        // System.out.println(countLeaves(root));
+        // System.out.println(countNonLeafNodes(root));
+        System.out.println(preorderTraversal(root));
+
     }
 }

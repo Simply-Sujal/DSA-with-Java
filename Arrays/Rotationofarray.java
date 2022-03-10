@@ -15,4 +15,18 @@ public class Rotationofarray {
             System.out.print(x + " ");
         }
     }
+
+    // rotate array d times
+    // int temp[] = new int[d];
+    // for(int i = 0; i < d; i++){ // this is for storing the d element 
+    //     temp[i] = arr[i];
+    // }
+
+    // for(int j = 0; j < n-d; j++){ // shift the element leftward 
+    //     arr[j] = arr[j+d];
+    // }
+
+    // for(int k = 0; k < d; k++){ // finally add the stored element to the arr
+    //     arr[n-d-k] = temp[k];
+    // }
 }
