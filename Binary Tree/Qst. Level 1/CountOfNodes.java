@@ -167,6 +167,59 @@ public class CountOfNodes{
         return preorder;
     }
 
+    // Iterative Inorder Traversal in Binary Tree : TComplex. O(N) and space O(N)
+    public static List<Integer> inorderTraversal(Node root){
+        List<Integer> inorder = new ArrayList<>();
+        Stack<Node> st = new Stack<Node>();
+        Node node = root;
+        while (true) {
+            if (node != null) {
+                st.push(node);
+                node = node.left;
+            }
+            else{
+                if (st.isEmpty()) {
+                    break;    
+                }
+            node = st.pop();
+            inorder.add(node.data);
+            node = node.right;
+        }
+    }
+        return inorder;
+    }
+
+    //Iterative PostOrder Traversak in Binary Tree : Tcomplex O(N) and Spacecomple O(N)
+    public static List<Integer> postOrderTraversal(Node root){
+        ArrayList<Integer> postOrder = new ArrayList<>();
+        Stack<Node> st1 = new Stack<>();
+        Stack<Node> st2 = new Stack<>();
+
+        if (root == null) {
+            return postOrder;
+        }
+
+        st1.push(root);
+
+        while (!st1.isEmpty()) {
+            root = st1.pop();
+            st2.add(root);
+
+            if (root.left != null) {
+                st1.push(root.left);
+            }
+            if (root.right != null) {
+                st1.push(root.right);
+            }
+        }
+
+        while(!st2.isEmpty()){
+            postOrder.add(st2.pop().data);
+        }
+
+        return postOrder;
+    }
+
 
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
@@ -180,7 +233,9 @@ public class CountOfNodes{
         // System.out.println(diameter2(root).diam);
         // System.out.println(countLeaves(root));
         // System.out.println(countNonLeafNodes(root));
-        System.out.println(preorderTraversal(root));
+        // System.out.println(preorderTraversal(root));
+        // System.out.println(inorderTraversal(root));
+        System.out.println(postOrderTraversal(root));
 
     }
 }
