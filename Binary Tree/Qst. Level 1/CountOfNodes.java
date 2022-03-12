@@ -189,7 +189,7 @@ public class CountOfNodes{
         return inorder;
     }
 
-    //Iterative PostOrder Traversak in Binary Tree : Tcomplex O(N) and Spacecomple O(N)
+    //Iterative PostOrder Traversal using two stack in Binary Tree : Tcomplex O(N) and Spacecomple O(N)
     public static List<Integer> postOrderTraversal(Node root){
         ArrayList<Integer> postOrder = new ArrayList<>();
         Stack<Node> st1 = new Stack<>();
