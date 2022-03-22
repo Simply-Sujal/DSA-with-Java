@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class Q6 {
     public static void main(String[] args) {
-       System.out.print(1+2+"3");
-       System.out.print(1+"2"+3);
-       System.out.print("1"+2+3);
+       Test obj1 = new Test();
+       obj1.x = 10;
+       Test obj2 = new Test();
+       obj2.
     }
 }
 

@@ -22,9 +22,5 @@ public class Problem15 {
             }
 
             input.close();
-
-
-            
-        
     }
 }
