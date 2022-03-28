@@ -18,6 +18,7 @@ public class MaxPQ{
         return n;
     }
 
+    // Insert an element in binary heap tree
     public void insert(int x){
         if (n == heap.length - 1) {
             resize(2*heap.length);
