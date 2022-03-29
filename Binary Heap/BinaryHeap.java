@@ -14,6 +14,7 @@ public class BinaryHeap {
         return sizeOfTree == 0;
     }
 
+
     // peek function will give us the very first element in an array
     public Integer peek(){ // TimeComplex : O(1) and SpaceComplex : O(1)
         if(isEmpty()){
@@ -134,6 +135,12 @@ public class BinaryHeap {
             heapifyTopToBottom(1, heapType);
             return extractedValue;
         }
+    }
+
+    // deletion of binary heap
+    public void deleteBH(){ // time complex : O(1) ans space complex.: O(1)
+        arr = null;
+        System.out.println("Binary Heap is deleted");
     }
 }
         

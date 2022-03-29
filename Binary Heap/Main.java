@@ -12,5 +12,6 @@ public class Main {
         bp.levelOrder();
         bp.extractHeapOfBP("Max");
         bp.levelOrder();
+        bp.deleteBH();
     }
 }
