@@ -10,7 +10,7 @@ public class Main {
         nodeList.add(new GraphNode("E", 4));
         nodeList.add(new GraphNode("F", 5));
         nodeList.add(new GraphNode("G", 6));
-        nodeList.add(new GraphNode("H", 7));
+        // nodeList.add(new GraphNode("H", 7));
         // nodeList.add(new GraphNode("F", 5));
 
         // Graph g = new Graph(nodeList);
@@ -23,17 +23,31 @@ public class Main {
         // System.out.println(g.toString());
 
         Graph newGraph = new Graph(nodeList);
-        newGraph.addDirectedEdge(0, 2);
-        newGraph.addDirectedEdge(2, 4);
-        newGraph.addDirectedEdge(4, 7);
-        newGraph.addDirectedEdge(4, 5);
-        newGraph.addDirectedEdge(5, 6);
-        newGraph.addDirectedEdge(1, 2);
-        newGraph.addDirectedEdge(1, 3);
-        newGraph.addDirectedEdge(3, 5);
+
+        // newGraph.addDirectedEdge(0, 2);
+        // newGraph.addDirectedEdge(2, 4);
+        // newGraph.addDirectedEdge(4, 7);
+        // newGraph.addDirectedEdge(4, 5);
+        // newGraph.addDirectedEdge(5, 6);
+        // newGraph.addDirectedEdge(1, 2);
+        // newGraph.addDirectedEdge(1, 3);
+        // newGraph.addDirectedEdge(3, 5);
         // g.bfs();
         // g.dfs();
-        System.out.print(newGraph.toString());
-        newGraph.topologicalSort();
+
+        newGraph.addUndirectedEdge(0, 1);
+        newGraph.addUndirectedEdge(0, 2);
+        newGraph.addUndirectedEdge(1, 3);
+        newGraph.addUndirectedEdge(1, 6);
+        newGraph.addUndirectedEdge(2, 3);
+        newGraph.addUndirectedEdge(2, 4);
+        newGraph.addUndirectedEdge(3, 5);
+        newGraph.addUndirectedEdge(4, 5);
+        newGraph.addUndirectedEdge(5, 6);
+
+        // System.out.print(newGraph.toString());
+        // newGraph.topologicalSort();
+
+        newGraph.BFSForSSSPP(nodeList.get(0));
     }
 }
