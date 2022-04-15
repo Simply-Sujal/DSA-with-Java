@@ -23,8 +23,9 @@ class Main{
         newGraph.addWeightedEdge(4, 6, 9);
         newGraph.addWeightedEdge(5, 6, 7);
 
-        System.out.println("Printing Dikstra from source A");
-        newGraph.dijkstra(nodeList.get(0));
+        // System.out.println("Printing Dikstra from source A");
+        System.out.println("Printing bellmanFord from source A");
+        newGraph.bellmanFord(nodeList.get(0));
         
     }
 }
