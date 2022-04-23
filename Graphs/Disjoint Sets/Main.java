@@ -21,7 +21,10 @@ class Main{
 
 
         // Kruskals 
-        Kruskal graph = new Kruskal(nodeList);
+        // Kruskal graph = new Kruskal(nodeList);
+
+        // Prims
+        Prims graph = new Prims(nodeList);
         graph.addWeightedUndirectedEdge(0, 1, 5);
         graph.addWeightedUndirectedEdge(0, 2, 13);
         graph.addWeightedUndirectedEdge(0, 4, 15);
@@ -29,7 +32,11 @@ class Main{
         graph.addWeightedUndirectedEdge(1, 3, 8);
         graph.addWeightedUndirectedEdge(2, 3, 6);
         graph.addWeightedUndirectedEdge(2, 4, 20);
-        System.out.println("Running Kruskal Algo on");
-        graph.kruskal();
+        
+        // System.out.println("Running Kruskal Algo on");
+        // graph.kruskal();
+
+        System.out.println("Running Prims algo on the graph");
+        graph.prims(nodeList.get(4));
     }
 }
